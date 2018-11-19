@@ -48,8 +48,6 @@ pipeline {
        stage('All Build')
        {
            steps {
-                bat 'echo %CD%'
-                bat 'mklink /D c:\\tb C:\\Jenkins\\jobs'
                powershell 'Write-Host ' + currentBuild.getBuildCauses()
                powershell 'Write-Host "Build: ' + BRANCH_NAME + '"'
            }
