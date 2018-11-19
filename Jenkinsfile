@@ -48,6 +48,9 @@ pipeline {
        stage('All Build')
        {
            steps {
+                dir('C:\\') {
+                    bat "mklink \\D c:\\tb \"${env.WORKSPACE}\""
+                }               
                powershell 'Write-Host ' + currentBuild.getBuildCauses()
                powershell 'Write-Host "Build: ' + BRANCH_NAME + '"'
            }
