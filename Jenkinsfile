@@ -49,7 +49,7 @@ pipeline {
        {
            steps {
                 dir('C:\\') {
-                    bat "mklink \\D c:\\tb \"${env.WORKSPACE}\""
+                    bat 'mklink \\D c:\\tb C:\\Jenkins\\jobs'
                 }               
                powershell 'Write-Host ' + currentBuild.getBuildCauses()
                powershell 'Write-Host "Build: ' + BRANCH_NAME + '"'
